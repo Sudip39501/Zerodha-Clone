@@ -46,7 +46,7 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
           //   navigate("http://localhost:5174");
-          // window.location.href = "http://localhost:5173";
+          window.location.href = "http://localhost:5173";
           // window.location.href = "https://dashboard-theta-nine-30.vercel.app";
            
         }, 0);
