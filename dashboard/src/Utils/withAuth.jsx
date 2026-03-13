@@ -19,6 +19,7 @@ const withAuth = (WrappedComponent) => {
     const token = getCookie("token");
 
     useEffect(() => {
+      console.log(token);
       if (!token) {
         window.location.href = "https://zerodha-clone-ten-weld.vercel.app/OpenAccount/login";
       }
