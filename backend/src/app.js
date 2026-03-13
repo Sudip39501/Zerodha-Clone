@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+//render issue
+
+app.set("trust proxy", 1);
 // app.get('/test', function (req, res) {
 
 //   console.log('Cookies: ', req.cookies)
