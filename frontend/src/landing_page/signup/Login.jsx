@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-  
+
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -48,8 +48,8 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
           
-          window.location.href = "http://localhost:5173";
-          // window.location.href = "https://dashboard-theta-nine-30.vercel.app";
+          // window.location.href = "http://localhost:5173";
+          window.location.href = "https://dashboard-theta-nine-30.vercel.app";
            
         }, 0);
       } else {

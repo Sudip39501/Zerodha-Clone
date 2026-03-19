@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
-  const navigate = useNavigate();
+  
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -36,7 +36,7 @@ const Signup = () => {
         {
           ...inputValue,
         },
-        { withCredentials: true, validateStatus: () => true },
+        {  validateStatus: () => true },
       );
 
       const { success, message } = data;
@@ -46,7 +46,7 @@ const Signup = () => {
           // navigate("http://localhost:5174");
           // window.location.href = "http://localhost:5173";
            window.location.href = "https://dashboard-theta-nine-30.vercel.app";
-        }, 1000);
+        }, 100);
       } else {
         handleError(message);
       }
