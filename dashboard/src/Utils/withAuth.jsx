@@ -21,7 +21,7 @@ const withAuth = (WrappedComponent) => {
     useEffect(() => {
       console.log(token);
       // if(token)
-      if (true) {
+      if (false) {
         window.location.href = "https://zerodha-clone-ten-weld.vercel.app/OpenAccount/login";
       }
     }, []);
