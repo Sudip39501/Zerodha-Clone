@@ -3,26 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 const withAuth = (WrappedComponent) => {
   const AuthComponent = (props) => {
-    function getCookie(name) {
-      const cookies = document.cookie.split(";");
-
-      for (let cookie of cookies) {
-        const [key, value] = cookie.trim().split("=");
-
-        if (key === name) {
-          return value;
-        }
-      }
-      return null;
-    }
-
-    const token = getCookie("token");
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
 
     useEffect(() => {
       console.log(token);
       // if(token)
-      if (false) {
-        window.location.href = "https://zerodha-clone-ten-weld.vercel.app/OpenAccount/login";
+      if (!token) {
+        window.location.href =
+          "https://zerodha-clone-ten-weld.vercel.app/OpenAccount/login";
       }
     }, []);
 
