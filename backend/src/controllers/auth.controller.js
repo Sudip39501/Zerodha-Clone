@@ -27,16 +27,9 @@ module.exports.singup = async (req, res) => {
 
     const token = createSecretToken(newUser._id);
 
-   res.cookie("token", token, {
-     httpOnly: true,
-     secure: true,
-     sameSite: "none",
-     maxAge: 24 * 60 * 60 * 1000,
-   });
-
     res
       .status(201)
-      .json({ success: true, message: "User Register successfully" });
+      .json({ success: true, message: "User Register successfully",token});
   } catch (err) {
     console.error("Signup error:", err.message);
     res.status(500).json({
@@ -69,16 +62,10 @@ module.exports.login = async (req, res) => {
 
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      maxAge: 24 * 60 * 60 * 1000,
-    });
-
     res.status(200).json({
       success: true,
       message: "User logged in successfully",
+      token,
     });
   } catch (err) {
     console.error("Signup error:", err.message);

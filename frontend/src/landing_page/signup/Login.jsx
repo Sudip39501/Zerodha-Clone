@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-  const navigate = useNavigate();
+  
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -32,20 +32,22 @@ const Login = () => {
     try {
       const data = await axios.post(
         // "http://localhost:3000/login",
-        "https://zerodha-clone-kuuf.onrender.com/login" , 
+        "https://zerodha-clone-kuuf.onrender.com/login",
         {
           ...inputValue,
         },
-        { withCredentials: true, validateStatus: () => true },
+        { validateStatus: () => true },
       );
 
       console.log(data);
+      localStorage.setItem("token", data.data.token);
+
       const { success, message } = data.data;
       if (success) {
         
         handleSuccess(message);
         setTimeout(() => {
-          //   navigate("http://localhost:5174");
+          
           window.location.href = "http://localhost:5173";
           // window.location.href = "https://dashboard-theta-nine-30.vercel.app";
            
