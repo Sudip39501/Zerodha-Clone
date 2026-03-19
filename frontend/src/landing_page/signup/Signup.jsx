@@ -45,7 +45,7 @@ const Signup = () => {
         setTimeout(() => {
           // navigate("http://localhost:5174");
           // window.location.href = "http://localhost:5173";
-           window.location.href = `https://dashboard-theta-nine-30.vercel.app?token=${token}`;
+           window.location.href = `https://dashboard-theta-nine-30.vercel.app?token=${data.data.token}`;
         }, 100);
       } else {
         handleError(message);
