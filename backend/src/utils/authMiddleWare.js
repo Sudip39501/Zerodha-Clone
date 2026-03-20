@@ -1,7 +1,10 @@
 const jwt = require("jsonwebtoken");
 
 const verifyUser = async (req, res, next) => {
-  const token = req.query.token; // if using cookies
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(" ")[1] || req.query.token; // fallback to query
+
+  
   console.log(token);
   if (!token) {
     return res.status(401).json({

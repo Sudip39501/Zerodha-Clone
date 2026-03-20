@@ -8,7 +8,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/allHoldings", {
+      .get("https://zerodha-clone-kuuf.onrender.com/allHoldings", {
         withCredentials: true,
       })
       .then((res) => {

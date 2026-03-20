@@ -10,7 +10,7 @@ const BuyActionWindow = (props) => {
   const handleBuyClick = async () => {
     console.log(props.net);
     await axios.post(
-      "http://localhost:3000/newOrder",
+      "https://zerodha-clone-kuuf.onrender.com/newOrder",
       {
         name: props.uid,
         qty: stockQuantity,
