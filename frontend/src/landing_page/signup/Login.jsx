@@ -36,7 +36,7 @@ const Login = () => {
         {
           ...inputValue,
         },
-        { validateStatus: () => true },
+        { credentials: true, validateStatus: () => true },
       );
 
       console.log(data);
