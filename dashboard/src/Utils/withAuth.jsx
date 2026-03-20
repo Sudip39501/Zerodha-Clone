@@ -6,7 +6,7 @@ const withAuth = (WrappedComponent) => {
     
 
     useEffect(() => {
-      console.log(token);
+      
       let isToken = lolocalStorage.getItem("token") ? true : false;
       if (!isToken) {
         window.location.href =
