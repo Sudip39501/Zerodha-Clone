@@ -4,14 +4,16 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://zerodha-clone-kuuf.onrender.com/allPositions", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        setAllPositions(res.data);
-      });
+   axios
+  .get("https://zerodha-clone-kuuf.onrender.com/allPositions", {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+  .then((res) => {
+    console.log(res.data);
+    setAllPositions(res.data);
+  });
   }, []);
   return (
     <div className="font-extralight">

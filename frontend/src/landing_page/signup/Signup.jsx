@@ -36,7 +36,7 @@ const Signup = () => {
         {
           ...inputValue,
         },
-        {  credentials: true, validateStatus: () => true },
+        {   validateStatus: () => true },
       );
 
       const { success, message } = data;

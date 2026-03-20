@@ -9,7 +9,7 @@ const orderRoute = require("../src/routes/orders.routes")
 //middleware
 app.use(cors({
   origin: ["http://localhost:5174", "http://localhost:5173" ,"https://zerodha-clone-ten-weld.vercel.app","https://dashboard-theta-nine-30.vercel.app"],
-  credentials: true,
+  
 }));
 app.use(bodyParser.json());
 app.use(express.json());

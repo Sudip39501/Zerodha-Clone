@@ -9,7 +9,9 @@ const Holdings = () => {
   useEffect(() => {
     axios
       .get("https://zerodha-clone-kuuf.onrender.com/allHoldings", {
-        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       })
       .then((res) => {
         // console.log(res.data);

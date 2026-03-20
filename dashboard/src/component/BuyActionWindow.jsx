@@ -21,7 +21,9 @@ const BuyActionWindow = (props) => {
         day: props.net,
       },
       {
-        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       },
     );
 
