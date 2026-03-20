@@ -14,15 +14,10 @@ const Menu = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
-  const handleLogout = async () => {
-    await axios.post(
-      "http://localhost:3000/logout",
-      {},
-      { withCredentials: true },
-    );
-
-    window.location.href = "http://localhost:5174";
-  };
+  const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "https://zerodha-clone-ten-weld.vercel.app/";
+};
 
   return (
     <div className="w-[65%] flex justify-between border-l border-gray-300  items-center shadow-sm ">
