@@ -7,7 +7,7 @@ const withAuth = (WrappedComponent) => {
 
     useEffect(() => {
       
-      let isToken = lolocalStorage.getItem("token") ? true : false;
+      let isToken = localStorage.getItem("token") ? true : false;
       if (!isToken) {
         window.location.href =
           "https://zerodha-clone-ten-weld.vercel.app/OpenAccount/login";
