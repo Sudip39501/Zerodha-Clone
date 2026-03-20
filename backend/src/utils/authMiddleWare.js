@@ -4,10 +4,10 @@ const verifyUser = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(" ")[1] || req.query.token; // fallback to query
 
-  
+
   console.log(token);
   if (!token) {
-    return res.status(401).json({
+    return res.status(402).json({
       message: "No token provided",
     });
   }
